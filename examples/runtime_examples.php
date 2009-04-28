@@ -5,12 +5,13 @@ require('../runtime.php');
 
 
 #debug	
-function pr($var) { 
-	if (!Runtime::isCommandLine()) echo "<pre>";
+if (!function_exists('pr')) {
+	function pr($var) { 
+		if (!Runtime::isCommandLine()) echo "<pre>";
 		print_r($var); echo "\n"; 
-	if (!Runtime::isCommandLine()) echo "</pre>"; 
+		if (!Runtime::isCommandLine()) echo "</pre>"; 
+	}
 }
-	
 
 /**
  * Please note:
